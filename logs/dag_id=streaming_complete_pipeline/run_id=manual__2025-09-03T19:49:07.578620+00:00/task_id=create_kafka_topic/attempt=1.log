@@ -1,0 +1,26 @@
+[2025-09-03T19:49:09.606+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: streaming_complete_pipeline.create_kafka_topic manual__2025-09-03T19:49:07.578620+00:00 [queued]>
+[2025-09-03T19:49:09.612+0000] {taskinstance.py:1083} INFO - Dependencies all met for <TaskInstance: streaming_complete_pipeline.create_kafka_topic manual__2025-09-03T19:49:07.578620+00:00 [queued]>
+[2025-09-03T19:49:09.612+0000] {taskinstance.py:1279} INFO - 
+--------------------------------------------------------------------------------
+[2025-09-03T19:49:09.612+0000] {taskinstance.py:1280} INFO - Starting attempt 1 of 2
+[2025-09-03T19:49:09.612+0000] {taskinstance.py:1281} INFO - 
+--------------------------------------------------------------------------------
+[2025-09-03T19:49:09.619+0000] {taskinstance.py:1300} INFO - Executing <Task(PythonOperator): create_kafka_topic> on 2025-09-03 19:49:07.578620+00:00
+[2025-09-03T19:49:09.622+0000] {standard_task_runner.py:55} INFO - Started process 864 to run task
+[2025-09-03T19:49:09.624+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'streaming_complete_pipeline', 'create_kafka_topic', 'manual__2025-09-03T19:49:07.578620+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/dag_streaming_complete.py', '--cfg-path', '/tmp/tmpvcpbn7ig']
+[2025-09-03T19:49:09.626+0000] {standard_task_runner.py:83} INFO - Job 10: Subtask create_kafka_topic
+[2025-09-03T19:49:09.638+0000] {logging_mixin.py:137} WARNING - /usr/local/lib/python3.9/site-packages/***/settings.py:249 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2025-09-03T19:49:09.692+0000] {task_command.py:388} INFO - Running <TaskInstance: streaming_complete_pipeline.create_kafka_topic manual__2025-09-03T19:49:07.578620+00:00 [running]> on host e954bc4828da
+[2025-09-03T19:49:09.734+0000] {taskinstance.py:1507} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=Klaus_Rezende
+AIRFLOW_CTX_DAG_ID=streaming_complete_pipeline
+AIRFLOW_CTX_TASK_ID=create_kafka_topic
+AIRFLOW_CTX_EXECUTION_DATE=2025-09-03T19:49:07.578620+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-09-03T19:49:07.578620+00:00
+[2025-09-03T19:50:10.357+0000] {logging_mixin.py:137} INFO - Using alternative method: [Errno 2] No such file or directory: '/opt/kafka/bin/kafka-topics.sh'
+[2025-09-03T19:50:10.358+0000] {logging_mixin.py:137} INFO - Topic will be auto-created when producer starts
+[2025-09-03T19:50:10.358+0000] {python.py:177} INFO - Done. Returned value was: None
+[2025-09-03T19:50:10.365+0000] {taskinstance.py:1318} INFO - Marking task as SUCCESS. dag_id=streaming_complete_pipeline, task_id=create_kafka_topic, execution_date=20250903T194907, start_date=20250903T194909, end_date=20250903T195010
+[2025-09-03T19:50:10.407+0000] {local_task_job.py:208} INFO - Task exited with return code 0
+[2025-09-03T19:50:10.422+0000] {taskinstance.py:2578} INFO - 1 downstream tasks scheduled from follow-on schedule check

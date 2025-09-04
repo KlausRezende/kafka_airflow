@@ -1,0 +1,31 @@
+config:
+  dag_name: continuous_streaming_consumer
+  schedule_interval: "*/3 * * * *"  # Every 3 minutes
+  owner: Klaus_Rezende
+  retries: 999
+  retry_delay_minutes: 1
+  execution_timeout_minutes: 4
+
+streaming:
+  kafka:
+    bootstrap_servers: "kafka:29092"
+    topic: "streaming_data"
+    partitions: 3  # Number of partitions for the topic
+    replication_factor: 1
+    consumer_timeout_ms: 15000
+  
+  api:
+    url: "https://jsonplaceholder.typicode.com/posts"
+    posts_limit: 1  # Not used anymore - cycles through all posts
+    producer_delay_seconds: 10  # 10 seconds between posts
+    batch_delay_seconds: 0
+  
+  postgres:
+    host: "postgres_simple"
+    database: "customer_streaming"
+    user: "airflow"
+    password: "airflow"
+    table: "tb_streaming_raw"
+  
+  runtime:
+    continuous_duration_seconds: 180  # 3 minutes = ~18 posts per run
